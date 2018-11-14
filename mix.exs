@@ -1,6 +1,6 @@
 defmodule Scrivener.List.Mixfile do
   use Mix.Project
-  @version "1.0.1"
+  @version "1.0.2"
   @name "Scrivener.List"
   @source_url "https://github.com/stephenmoloney/scrivener_list"
   @homepage_url "https://hexdocs.pm/scrivener_list"
@@ -24,25 +24,21 @@ defmodule Scrivener.List.Mixfile do
 
 
   def application do
-    [applications: [:logger, :scrivener_ecto]]
+    [applications: [:logger]]
   end
-
 
   defp deps() do
     [
-     {:scrivener_ecto, "~> 1.0"},
-     {:earmark, "~> 1.0", only: :dev},
-     {:ex_doc, "~> 0.1", only: :dev}
+      {:earmark, "~> 1.0", only: :dev},
+      {:ex_doc, "~> 0.1", only: :dev}
     ]
   end
 
-
   defp description() do
     ~S"""
-    A scrivener/scrivener_ecto compatible extension that allows pagination of a list.
+    A Scrivener compatible extension that allows pagination of a list.
     """
   end
-
 
   defp package() do
     [
@@ -59,13 +55,11 @@ defmodule Scrivener.List.Mixfile do
 
   defp docs do
     [
-     main: "README.md",
-     extra_section: "GUIDE",
-     extras: [
-              "README.md": [path: "README.md", title: "GUIDE"]
-             ]
+      main: "README.md",
+      extra_section: "GUIDE",
+      extras: [
+        "README.md": [path: "README.md", title: "GUIDE"]
+      ]
     ]
   end
-
-
 end
